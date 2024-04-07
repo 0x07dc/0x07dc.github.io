@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Animation</title>
+<style>
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: -10;
+}
+
+.overlaySky {
+    position: fixed;
+    width: 100%;
+    height: 40%;
+    left: 0;
+    top: 0;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: -10;
+}
+
+/* Define CSS animations */
+@keyframes oceanWaves {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes skyLight {
+  0% {
+    background-color: #87ceeb; /* Light blue */
+  }
+  50% {
+    background-color: #f0e68c; /* Light yellow */
+  }
+  100% {
+    background-color: #87ceeb; /* Light blue */
+  }
+}
+
+@keyframes driftingClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+}
+
+/* Apply animations to elements */
+.ocean {
+  background-color: #0074d9; /* Deep blue */
+  background: repeating-linear-gradient(45deg, #4800ff, #0000ff 10px, #00c3ff 10px, #004cff 20px);
+  animation: oceanWaves 3s infinite alternate ease-in-out;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 30%;
+
+}
+.ocean2 {
+  background-color: #0074d9; /* Deep blue */
+  background: repeating-linear-gradient(45deg, #0026ff, #060aff 10px, #0184ff 10px, #0138ff 20px);
+  animation: oceanWaves 4s infinite alternate ease-in-out;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 30%;
+
+}
+.ocean3 {
+  background-color: #0074d9; /* Deep blue */
+  background: repeating-linear-gradient(45deg, #0400ff, #01ffff 10px, #0066ff 10px, #00aaff 20px);
+  animation: oceanWaves 5s infinite alternate ease-in-out;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 30%;
+
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff; /* White */
+  border-radius: 50%;
+  animation: sparkle 2s infinite alternate;
+  top: 80%;
+}
+.sparkle2 {
+  top: 50%;
+  left: 10%;
+}
+.sparkle3 {
+  top: 61%;
+  left: 20%;
+}
+.sparkle4 {
+  top: 73%;
+  left: 30%;
+}
+.sparkle5 {
+  top: 84%;
+  left: 40%;
+}
+.sparkle6 {
+  top: 96%;
+  left: 50%;
+}
+.sparkle7 {
+  top: 71%;
+  left: 60%;
+}
+.sparkle8 {
+  top: 81%;
+  left: 70%;
+}
+.sparkle9 {
+  top: 59%;
+  left: 80%;
+}
+.sparkle10 {
+  top: 67%;
+  left: 90%;
+}
+.sparkle11 {
+  top: 81%;
+  left: 100%;
+}
+
+.tsparkle2 {
+  top: 45%;
+}
+.tsparkle2 {
+  top: 50%;
+}
+.tsparkle3 {
+  top: 60%;
+}
+.tsparkle4 {
+  top: 70%;
+}
+.tsparkle5 {
+  top: 80%;
+}
+.tsparkle6 {
+  top: 90%;
+}
+.tsparkle7 {
+  top: 100%;
+}
+.tsparkle8 {
+  top: 54%;
+}
+.tsparkle9 {
+  top: 66%;
+}
+.tsparkle10 {
+  top: 78%;
+}
+
+
+.sky {
+  background-color: #87ceeb; /* Light blue */
+  animation: skyLight 10s infinite alternate;
+
+}
+
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background-color: #fff; /* White */
+  border-radius: 20px;
+  opacity: 0.7;
+  animation: driftingClouds 20s infinite alternate;
+}
+
+.cloud2 {
+  left: 100px;
+  top: 50px;
+  animation-delay: 1s;
+}
+.cloud3 {
+  left: 300px;
+  top: 100px;
+  animation-delay: 2s;
+}
+.cloud4 {
+  left: 555;
+  top: 130px;
+  animation-delay: 2.5s;
+}
+.cloud5 {
+  left: 700px;
+  top: 180px;
+  animation-delay: 3.1s;
+
+}
+</style>
+</head>
+<body>
+
+<!-- Place the elements in your HTML -->
+
+<div class="overlay ocean">
+  <div class="sparkle"></div>
+  <div class="sparkle sparkle2"></div>
+  <div class="sparkle sparkle3"></div>
+  <div class="sparkle sparkle4"></div>
+  <div class="sparkle sparkle5"></div>
+  <div class="sparkle sparkle6"></div>
+  <div class="sparkle sparkle7"></div>
+  <div class="sparkle sparkle8"></div>
+  <div class="sparkle sparkle9"></div>
+  <div class="sparkle sparkle10"></div>
+  <div class="sparkle sparkle11"></div>
+
+  <div class="sparkle tsparkle1"></div>
+  <div class="sparkle sparkle2 tsparkle2"></div>
+  <div class="sparkle sparkle3 tsparkle3"></div>
+  <div class="sparkle sparkle4 tsparkle4"></div>
+  <div class="sparkle sparkle5 tsparkle5"></div>
+  <div class="sparkle sparkle6 tsparkle6"></div>
+  <div class="sparkle sparkle7 tsparkle7"></div>
+  <div class="sparkle sparkle8 tsparkle8"></div>
+  <div class="sparkle sparkle9 tsparkle9"></div>
+  <div class="sparkle sparkle10 tsparkle10"></div>
+  <div class="sparkle sparkle11 tsparkle11"></div>
+</div>
+<div class="overlay ocean2">
+  <div class="sparkle"></div>
+  <div class="sparkle sparkle2"></div>
+  <div class="sparkle sparkle3"></div>
+  <div class="sparkle sparkle4"></div>
+  <div class="sparkle sparkle5"></div>
+  <div class="sparkle sparkle6"></div>
+  <div class="sparkle sparkle7"></div>
+  <div class="sparkle sparkle8"></div>
+  <div class="sparkle sparkle9"></div>
+  <div class="sparkle sparkle10"></div>
+  <div class="sparkle sparkle11"></div>
+
+  <div class="sparkle tsparkle1"></div>
+  <div class="sparkle sparkle2 tsparkle2"></div>
+  <div class="sparkle sparkle3 tsparkle3"></div>
+  <div class="sparkle sparkle4 tsparkle4"></div>
+  <div class="sparkle sparkle5 tsparkle5"></div>
+  <div class="sparkle sparkle6 tsparkle6"></div>
+  <div class="sparkle sparkle7 tsparkle7"></div>
+  <div class="sparkle sparkle8 tsparkle8"></div>
+  <div class="sparkle sparkle9 tsparkle9"></div>
+  <div class="sparkle sparkle10 tsparkle10"></div>
+  <div class="sparkle sparkle11 tsparkle11"></div>
+</div>
+<div class="overlay ocean3">
+  <div class="sparkle"></div>
+  <div class="sparkle sparkle2"></div>
+  <div class="sparkle sparkle3"></div>
+  <div class="sparkle sparkle4"></div>
+  <div class="sparkle sparkle5"></div>
+  <div class="sparkle sparkle6"></div>
+  <div class="sparkle sparkle7"></div>
+  <div class="sparkle sparkle8"></div>
+  <div class="sparkle sparkle9"></div>
+  <div class="sparkle sparkle10"></div>
+  <div class="sparkle sparkle11"></div>
+
+  <div class="sparkle tsparkle1"></div>
+  <div class="sparkle sparkle2 tsparkle2"></div>
+  <div class="sparkle sparkle3 tsparkle3"></div>
+  <div class="sparkle sparkle4 tsparkle4"></div>
+  <div class="sparkle sparkle5 tsparkle5"></div>
+  <div class="sparkle sparkle6 tsparkle6"></div>
+  <div class="sparkle sparkle7 tsparkle7"></div>
+  <div class="sparkle sparkle8 tsparkle8"></div>
+  <div class="sparkle sparkle9 tsparkle9"></div>
+  <div class="sparkle sparkle10 tsparkle10"></div>
+  <div class="sparkle sparkle11 tsparkle11"></div>
+</div>
+<div class="sky overlaySky">
+  <div class="cloud"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="cloud cloud4"></div>
+  <div class="cloud cloud5"></div>
+</div>
+
+
+</body>
+</html>
