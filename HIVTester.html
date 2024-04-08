@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HIV Tester</title>
+		<style>
+			.overlay {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background: rgba(196, 196, 199, 0.7);
+				z-index: -10;
+				text-align: center;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="overlay">
+			<hr>HIV Tester (probably accurate 66% of time or more). Not approved by FDA.</hr>
+			<p><button onclick="runTest()" id="testButton">RUN HIV TEST</button></p>
+			<p><div class="testResult"></div></p>
+		</div>
+		<script>
+			let testResult = (document.getElementsByClassName("testResult"))[0];
+			let firstRun = true;
+			function runTest(i){
+				if(firstRun == true)
+					i = 11;
+				firstRun = false;
+				setTimeout(function(){
+					i -= 1; 
+					if(i==-1){
+						firstRun = true;
+						_runTest(); 
+					} else {
+						runTest(i);
+						testResult.innerHTML = i;
+						
+					}
+				},800); 
+			}
+
+
+
+
+			function _runTest(){
+				let testNum = Math.random()*3%3;
+				testNum = Math.round(testNum);
+				if(testNum == 0){
+					testResult.innerHTML = "POSITIVE";
+				} else if(testNum == 1){
+					testResult.innerHTML = "MAYBE";
+				} else if(testNum == 2){
+					testResult.innerHTML = "NEGATIVE";
+				}
+			}
+		</script>
+
+	</body>
+</html>
